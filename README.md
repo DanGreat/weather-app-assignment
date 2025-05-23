@@ -6,7 +6,8 @@ This project is weather dashboard application that displays detailed weather inf
 ## Resources
 
 The API service used to fetch weather information is `https://app.tomorrow.io/` which provide realtime weather information of cities
-Resource to access weather codes `https://docs.tomorrow.io/reference/data-layers-weather-codes`
+Resource to access weather codes `https://docs.tomorrow.io/reference/data-layers-weather-codes`, API_KEY is included in the environment directory, you can as well register
+and get an API_KEY to access the resources
 
 
 ## How to run the application
