@@ -8,13 +8,14 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IWeather } from '../model/weather.model';
 import WeatherCodes from '../utils/weather-codes.json';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
   private readonly http = inject(HttpClient);
-  private readonly API_KEY = 'Xq0yznG6iDbTDZi5EjDljQMXcjvAaoGU';
+  private readonly API_KEY = environment.API_KEY;
 
   getCountryWeather(cityName: string): Observable<IWeather> {
     let params = new HttpParams();

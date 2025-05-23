@@ -83,14 +83,14 @@ export class AppComponent implements OnInit {
       );
 
       if (index == -1 && this.generatedForecast()) {
-        return [...current, this.generatedForecast() as IWeather];
+        return [this.generatedForecast() as IWeather, ...current];
       }
 
       return current;
     });
 
     localStorage.setItem(this.forecaseKey, JSON.stringify(this.forecasts()));
-    // this.generatedForecast.set(null);
+    this.generatedForecast.set(null);
     this.cityCtrl.reset('');
   }
 
