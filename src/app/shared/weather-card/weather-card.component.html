@@ -1,0 +1,14 @@
+<div class="weather-item">
+  @if (showRemoveIcon()) {
+    <button (click)="removeCard()">x</button>
+  }
+
+  <div class="weather-info">
+    <h2>{{ forecast()?.temperature }} <sup>0</sup>C</h2>
+    <p>{{ forecast()?.cityName }}</p>
+  </div>
+
+  <div class="weather-condition">
+    {{ forecast()?.weatherCondition }}
+  </div>
+</div>
