@@ -7,6 +7,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IWeather } from '../model/weather.model';
+import WeatherCodes from '../utils/weather-codes.json';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class WeatherService {
           return {
             cityName: location.name,
             temperature: data.values.temperature,
-            weatherCondition: data.values.weatherCode,
+            weatherCondition: WeatherCodes.weatherCode[data.values.weatherCode as keyof typeof WeatherCodes.weatherCode],
           };
         }),
         catchError((err: any) => {

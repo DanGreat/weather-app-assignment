@@ -24,8 +24,8 @@
   }
   
   @if (forecasts().length > 0) {
-  <h2>Countries Weather Forecast</h2>
-  
+  <h2>Weather Forecast</h2>
+
   <div class="weather-list" [@listAnimation]>
     @for (forecast of forecasts(); track forecast.cityName) {
     <app-weather-card
